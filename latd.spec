@@ -1,13 +1,13 @@
 Summary:	LAT daemon
 Summary(pl):	Serwer LAT
 Name:		latd
-Version:	1.18
-Release:	3
+Version:	1.20
+Release:	1
 Vendor:		Patrick Caulfield
 License:	GPL v2
 Group:		Networking/Utilities
-# Source0-md5:	045ce07e8a92a9be9a29ec754fc2c005
 Source0:	http://dl.sourceforge.net/linux-decnet/%{name}-%{version}.tar.gz
+# Source0-md5:	23adb0eda76d4ff2beab1c981b21d152
 Patch0:		%{name}-assert.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -50,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/moprc
 %attr(755,root,root) %{_bindir}/llogin
 %{_mandir}/man?/*
-%{_sysconfdir}/latd.conf
+%{_sysconfdir}/latd.conf.sample
 #/etc/rc.d/init.d/lat
 #/etc/rc.d/rc3.d/S79lat
 #/etc/rc.d/rc3.d/K79lat
