@@ -8,6 +8,7 @@ License:	GPL v2
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/linux-decnet/%{name}-%{version}.tar.gz
 # Source0-md5:	23adb0eda76d4ff2beab1c981b21d152
+Source1:	%{name}.conf
 Patch0:		%{name}-assert.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -39,19 +40,20 @@ for i in 1 5 8; do
 	install *.$i $RPM_BUILD_ROOT%{_mandir}/man$i/
 done
 
+install %SOURCE1 $RPM_BUILD_ROOT/etc/
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.html NEWS README TODO WARRANTY
+%doc *.html NEWS README TODO WARRANTY latd.conf.sample
+%config(noreplace) %verify(not size mtime md5) /etc/latd.conf
 %attr(755,root,root) %{_sbindir}/latcp
 %attr(755,root,root) %{_sbindir}/latd
 %attr(755,root,root) %{_sbindir}/moprc
 %attr(755,root,root) %{_bindir}/llogin
 %{_mandir}/man?/*
-%{_sysconfdir}/latd.conf.sample
 #/etc/rc.d/init.d/lat
 #/etc/rc.d/rc3.d/S79lat
 #/etc/rc.d/rc3.d/K79lat
-#%doc README NEWS latd.html
