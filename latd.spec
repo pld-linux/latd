@@ -2,14 +2,16 @@ Summary:	LAT daemon
 Summary(pl):	Serwer LAT
 Name:		latd
 Version:	1.18
-Release:	1
+Release:	2
 Vendor:		Patrick Caulfield
 License:	GPL v2
 Group:		Networking/Utilities
 # Source0-md5:	045ce07e8a92a9be9a29ec754fc2c005
 Source0:	http://dl.sourceforge.net/linux-decnet/%{name}-%{version}.tar.gz
+Patch0:		%{name}-assert.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	lockdev-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,6 +22,7 @@ Implementacja LAT dla linuksa.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
