@@ -1,13 +1,13 @@
 Summary:	LAT daemon
 Summary(pl):	Serwer LAT
 Name:		latd
-Version:	1.16
-Release:	1
+Version:	1.18
+Release:	0.1
 Vendor:		Patrick Caulfield
 License:	GPL
 Group:		Networking/Utilities
-Source0:	http://download.sourceforge.net/linux-decnet/%{name}-%{version}.tar.gz
-# Source0-md5:	5ca68d0257b7fadb4c62112f0277fa2d
+# Source0-md5:	045ce07e8a92a9be9a29ec754fc2c005
+Source0:	http://dl.sourceforge.net/linux-decnet/%{name}-%{version}.tar.gz
 BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -17,10 +17,13 @@ LAT implementation for Linux.
 Implementacja LAT dla linuksa.
 
 %prep
-%setup -q -n %{name}
+%setup -q 
 
 %build
-%{__make} OPTDEBUG="%{rpmcflags}"
+
+%configure
+
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -40,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/moprc
 %attr(755,root,root) %{_bindir}/llogin
 %{_mandir}/man?/*
-#%{_sysconfdir}/latd.conf
+%{_sysconfdir}/latd.conf
 #/etc/rc.d/init.d/lat
 #/etc/rc.d/rc3.d/S79lat
 #/etc/rc.d/rc3.d/K79lat
