@@ -7,6 +7,7 @@ Vendor:		Patrick Caulfield
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://download.sourceforge.net/linux-decnet/%{name}-%{version}.tar.gz
+# Source0-md5:	5ca68d0257b7fadb4c62112f0277fa2d
 BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
