@@ -2,12 +2,14 @@ Summary:	LAT daemon
 Summary(pl):	Serwer LAT
 Name:		latd
 Version:	1.18
-Release:	0.1
+Release:	1
 Vendor:		Patrick Caulfield
-License:	GPL
+License:	GPL v2
 Group:		Networking/Utilities
 # Source0-md5:	045ce07e8a92a9be9a29ec754fc2c005
 Source0:	http://dl.sourceforge.net/linux-decnet/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,15 +22,16 @@ Implementacja LAT dla linuksa.
 %setup -q 
 
 %build
-
 %configure
-
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man{1,5,8}
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 for i in 1 5 8; do
 	install *.$i $RPM_BUILD_ROOT%{_mandir}/man$i/
 done
@@ -38,6 +41,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc *.html NEWS README TODO WARRANTY
 %attr(755,root,root) %{_sbindir}/latcp
 %attr(755,root,root) %{_sbindir}/latd
 %attr(755,root,root) %{_sbindir}/moprc
