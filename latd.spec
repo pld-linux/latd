@@ -40,7 +40,7 @@ for i in 1 5 8; do
 	install *.$i $RPM_BUILD_ROOT%{_mandir}/man$i/
 done
 
-install %SOURCE1 $RPM_BUILD_ROOT/etc/
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
