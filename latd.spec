@@ -10,7 +10,7 @@ Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/linux-decnet/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 LAT implementation for Linux.
@@ -19,7 +19,7 @@ LAT implementation for Linux.
 Implementacja LAT dla linuksa.
 
 %prep
-%setup -q 
+%setup -q
 
 %build
 %configure
