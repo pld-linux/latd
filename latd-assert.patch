@@ -1,0 +1,10 @@
+--- latd-1.18/clientsession.cc~	2003-04-04 13:48:32.000000000 +0200
++++ latd-1.18/clientsession.cc	2003-11-20 07:28:19.000000000 +0100
+@@ -23,6 +23,7 @@
+ #include <string>
+ #include <map>
+ #include <strstream>
++#include <assert.h>
+ 
+ #include "lat.h"
+ #include "utils.h"
