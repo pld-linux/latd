@@ -12,6 +12,7 @@ Source1:	%{name}.conf
 Patch0:		%{name}-assert.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libstdc++-devel
 BuildRequires:	lockdev-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -48,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.html NEWS README TODO WARRANTY latd.conf.sample
-%config(noreplace) %verify(not size mtime md5) /etc/latd.conf
+%config(noreplace) %verify(not md5 mtime size) /etc/latd.conf
 %attr(755,root,root) %{_sbindir}/latcp
 %attr(755,root,root) %{_sbindir}/latd
 %attr(755,root,root) %{_sbindir}/moprc
