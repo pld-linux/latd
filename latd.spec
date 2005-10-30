@@ -2,7 +2,7 @@ Summary:	LAT daemon
 Summary(pl):	Serwer LAT
 Name:		latd
 Version:	1.21
-Release:	1
+Release:	2
 Vendor:		Patrick Caulfield
 License:	GPL v2
 Group:		Networking/Utilities
