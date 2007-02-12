@@ -1,5 +1,5 @@
 Summary:	LAT daemon
-Summary(pl):	Serwer LAT
+Summary(pl.UTF-8):   Serwer LAT
 Name:		latd
 Version:	1.21
 Release:	3
@@ -19,7 +19,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 LAT implementation for Linux.
 
-%description -l pl
+%description -l pl.UTF-8
 Implementacja LAT dla linuksa.
 
 %prep
