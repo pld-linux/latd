@@ -1,5 +1,5 @@
 Summary:	LAT daemon
-Summary(pl.UTF-8):   Serwer LAT
+Summary(pl.UTF-8):	Serwer LAT
 Name:		latd
 Version:	1.21
 Release:	3
