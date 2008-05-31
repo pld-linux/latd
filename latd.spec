@@ -1,13 +1,13 @@
 Summary:	LAT daemon
 Summary(pl.UTF-8):	Serwer LAT
 Name:		latd
-Version:	1.21
-Release:	3
+Version:	1.25
+Release:	1
 Vendor:		Patrick Caulfield
 License:	GPL v2
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/linux-decnet/%{name}-%{version}.tar.gz
-# Source0-md5:	ffbb4f60eea0ed640968150f5420793a
+# Source0-md5:	e380543278458e276f4200edc4c9a268
 Source1:	%{name}.conf
 Patch0:		%{name}-assert.patch
 BuildRequires:	autoconf
